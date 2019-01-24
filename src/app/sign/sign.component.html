@@ -1,0 +1,67 @@
+<div class="row">
+  
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+      <h1 class="text-center" style="text-decoration:underline; color:blue;">Registration Form</h1>
+  <form class="mt-5" #ref="ngForm" > 
+    <div class="form-group">  
+      <label for="m">Firstname</label>    
+      <input type="text" name="firstname" placeholder="First name" class="rounded ml-2" #ref1="ngModel" id="m" class="form-control"  [(ngModel)]=firstname required>
+      <label *ngIf="ref1.touched && ref1.invalid">
+        <p>*Field is mandatory </p>
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="m1">Lastname</label>
+      <input type="text" name="Lastname" placeholder="Last name" class="ml-5 rounded" #ref2="ngModel" id="m1" class="form-control"  [(ngModel)]=lastname required>
+      <label *ngIf="ref2.touched && ref2.invalid">
+          <p>*Field is mandatory </p>
+        </label>
+    </div>
+    <div class="form-group">
+      <label for='m4'>Email :</label>
+      <input type="email" name="Email" placeholder="Your email address" class="rounded ml-2" #ref3="ngModel" id="m4" class="form-control" [(ngModel)]=Email required>
+      <label *ngIf="ref3.touched && ref3.invalid">
+          <p>*Field is mandatory </p>
+        </label>
+    </div>
+    <div class="form-group">
+        <label for='m6'>Username :</label>
+        <input type="text" name="username" placeholder="enter username" class="rounded ml-2" #ref4="ngModel" id="m6" class="form-control"  [(ngModel)]=username required>
+        <label *ngIf="ref4.touched && ref4.invalid">
+            <p>*Field is mandatory </p>
+          </label>
+      </div>
+    <div class="form-group">  
+        <label for="m8">Password :</label>    
+        <input type="password" name="password" placeholder="password" class="rounded ml-2" #ref5="ngModel" id="m8" class="form-control"  [(ngModel)]=password required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+        <label *ngIf="ref5.errors?.pattern && ref5.invalid">
+            <p>8 characters including 1 uppercase letter, 1 special character, alphanumeric characters </p>
+          </label>
+      </div>
+    
+    <div class="form-group">
+        <label for="m2">Reconfirm password :</label>  
+        <input type="password" name="Reconfirm" placeholder="confirm password" #ref6="ngModel" class="ml-5 rounded" id="m2" class="form-control"  [(ngModel)]=Reconfirm required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+        <label *ngIf="ref6.errors?.pattern && ref6.invalid">
+            <p>8 characters including 1 uppercase letter, 1 special character, alphanumeric characters </p>
+          </label>
+      </div>
+
+      
+      
+      <div class="form-group ml-3" >  
+          <label>Gender :</label>    
+          <input type="radio" name="gen" [value]="male" class="ml-3" [(ngModel)]="gen" >
+          <label>Male</label>  
+          <input type="radio" name="gen" [value]="female" class="ml-5" [(ngModel)]="gen" >
+          <label>Female</label> 
+        </div>
+
+
+  </form>
+
+  <button type="button" class="rounded d-block bg-info" (click)="add(ref.value)"  style="margin-left:300px;">Submit</button>
+</div>
+<div class="col-sm-3"></div>
+</div>

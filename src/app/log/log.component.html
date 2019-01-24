@@ -1,0 +1,31 @@
+<div class="container-fluid bg-info" >
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6 mt-5">
+        <h1 style="text-decoration:underline ; color:blue " class="text-center">Login Form</h1>
+         <form class="mt-4" #ref="ngForm" (ngSubmit)="add(ref.value)">
+            <div class="form-group">
+              <label for="#w">Username</label>
+              <input type="text" name="username" class="form-control" id="w" #ref1="ngModel" [(ngModel)]=username required>
+              <label *ngIf="ref1.touched && ref1.invalid">
+                  <p>*Field is mandatory </p>
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="#w1">Password</label>
+                <input type="text" name="password" class="form-control" id="w1" #ref2="ngModel" [(ngModel)]=password required >
+                <label *ngIf="ref2.touched && ref2.invalid">
+                    <p>*Field is mandatory </p>
+                  </label>
+              </div>
+             <a routerLink='forgot' class="float-right text-dark">forgot password?</a>   <br/>
+             <button type="submit"  class="d-block mx-auto mt-2 rounded">login</button>
+            </form> 
+
+        <p style="margin-bottom:275px;">need to register?please <a>Sign up</a></p>
+       
+      </div>
+      <div class="col-sm-3"></div>
+             
+      </div>
+    </div>

@@ -1,0 +1,18 @@
+<table  class="table table-bordered table-dark table-striped mt-3">
+  <thead>
+      <th>sno</th>
+      <th>name</th>
+      <th>age</th>
+      <th>Purchase</th>
+  </thead>
+  <tr *ngFor="let i of data | paginate:{itemsPerPage:6,currentPage:p}">
+     <td>{{i.category}}</td>
+      <td>{{i.medicine}}</td>
+      <td>
+          {{i.expiry}}
+          
+      </td>
+      <td><a><button type="button">purchase</button></a></td>
+  </tr>
+</table>
+<pagination-controls (pageChange)="p=$event" ></pagination-controls>

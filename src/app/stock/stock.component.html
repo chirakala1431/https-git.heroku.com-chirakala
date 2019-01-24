@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <table class="table table-bordered">
+      <thead>
+        <th>Sno</th>
+        <th>Medicines</th>
+        <th>category</th>
+        <th>Exp.Date</th>
+      </thead>
+      <tr *ngFor="let i of data;let in=index">
+        <td>{{in+1}}</td>
+          <td>{{i.medicine}}</td>
+          <td>{{i.category}}</td>
+          <td>{{i.expiry}}</td>
+
+      </tr>
+    </table>
+  </div>
+</div>

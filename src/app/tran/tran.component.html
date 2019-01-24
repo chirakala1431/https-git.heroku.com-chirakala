@@ -1,0 +1,24 @@
+<table #table class="table table-bordered table-dark table-striped mt-3">
+    <thead>
+        <th>Sno</th>
+        <th>User Name</th>
+        <th>Category</th>
+        <th>Medicine name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </thead>
+    <tr *ngFor="let i of (data | paginate:{itemsPerPage:6,currentPage:p});let in=index">
+        <td>{{in+1}}</td>
+        <td>{{i.username}}</td>
+       <td>{{i.category}}</td>
+        <td>{{i.medname}}</td>
+        <td>
+            {{i.price}}
+            
+        </td>
+        <td>{{i.quantity}}</td>
+        <td><button type="button" (click)="trans(in)" class="d-block float-right btn-info">download</button></td>
+    </tr>
+</table>
+
+<pagination-controls (pageChange)="p=$event" ></pagination-controls>

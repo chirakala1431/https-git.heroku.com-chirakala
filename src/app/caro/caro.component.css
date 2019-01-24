@@ -1,0 +1,8 @@
+
+.carousel-caption p{
+    float: right;
+    margin-bottom: 200px;
+    font-size: 20px;
+    line-height: 40px;
+    color: firebrick;
+}

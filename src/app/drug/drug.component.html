@@ -1,0 +1,15 @@
+<table  class="table table-bordered table-dark table-striped mt-3">
+    <thead>
+        <th>Sno</th>
+        <th>Medicines</th>
+        <th>category</th>
+        <th>Exp.Date</th>
+    </thead>
+    <tr *ngFor="let in=index;let i of data | paginate:{itemsPerPage:6,currentPage:p}">
+        <td>{{in+1}}</td>
+        <td>{{i.medicine}}</td>
+        <td>{{i.category}}</td>
+        <td>{{i.expiry}}</td>
+
+        <td><a><button type="button" data-target="#x" data-toggle="modal">cart</button></a></td>
+    </tr>
